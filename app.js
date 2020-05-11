@@ -1,10 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+
 // create express app
 const app = express();
 
 app.use(bodyParser.json())
+
+const {mongoose} = require('./database.config.js');
+
 
 // define a simple route
 app.get('/', (req, res) => {
