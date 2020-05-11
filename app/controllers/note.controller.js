@@ -13,6 +13,15 @@ exports.create = (req, res) => {
         title: req.body.title || "Untitled Note", 
         content: req.body.content
     });
+
+    note.save()
+    .then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while creating the Note."
+        });
+    });
 };
 
 // Retrieve and return all notes from the database.
