@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 
 const NoteSchema = mongoose.Schema({
     title: String,
-    content: String
+    note: String,
+    img: 
+    { 
+        data: Buffer, 
+        contentType: String 
+    } 
 }, {
     timestamps: true
 });
